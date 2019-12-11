@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace s17235Pizzeria.Models
 {
@@ -14,7 +15,11 @@ namespace s17235Pizzeria.Models
 
         public int IdZamowienie { get; set; }
         public int PromocjaIdPromocja { get; set; }
+
+        [Required(ErrorMessage = "Data dostawy jest wymagana")]
         public DateTime DataZamowienia { get; set; }
+
+        [Required(ErrorMessage="Adres dostawy jest wymagany")]
         public string AdresDostawy { get; set; }
 
         public virtual Promocja PromocjaIdPromocjaNavigation { get; set; }

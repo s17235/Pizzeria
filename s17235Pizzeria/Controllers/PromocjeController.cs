@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using s17235Pizzeria.Models;
 
 namespace s17235Pizzeria.Controllers
@@ -19,17 +20,53 @@ namespace s17235Pizzeria.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetEmps()
+        public IActionResult GetPromocja()
         {
-            return Ok(_context.Emp.ToList());
+            return Ok(_context.Promocja.ToList());
         }
 
-        [HttpGet("{id:int}")]
-        public IActionResult GetEmp(int id)
+        [HttpGet("{IdPromocja:int}")]
+        public IActionResult GetPromocja(int IdPromocja)
         {
-            var promocja = _context.Promocja.FirstOrDefault(e => e.IdPromocja == id);
+            var promocja = _context.Promocja.FirstOrDefault(e => e.IdPromocja == IdPromocja);
             if (promocja == null)
                 return NotFound();
+
+            return Ok(promocja);
+        }
+
+        [HttpPost]
+        public IActionResult Create(Promocja promocja)
+        {
+            _context.Promocja.Add(promocja);
+            _context.SaveChanges();
+
+            return StatusCode(201, promocja);
+        }
+
+        [HttpPut("{IdPromocja:int}")]
+        public IActionResult Update(int IdPromocja, Promocja promocja)
+        {
+            var istnieje = _context.Promocja.FirstOrDefault(e => e.IdPromocja == IdPromocja);
+            if (istnieje == null)
+                return NotFound();
+
+            _context.Promocja.Attach(promocja);
+            _context.Entry(promocja).State = EntityState.Modified;
+            _context.SaveChanges();
+
+            return Ok(promocja);
+        }
+
+        [HttpDelete("{IdPromocja:int}")]
+        public IActionResult Delete(int IdPromocja, Promocja promocja)
+        {
+            var istnieje = _context.Promocja.FirstOrDefault(e => e.IdPromocja == IdPromocja);
+            if (istnieje == null)
+                return NotFound();
+
+            _context.Promocja.Remove(promocja);
+            _context.SaveChanges();
 
             return Ok(promocja);
         }
