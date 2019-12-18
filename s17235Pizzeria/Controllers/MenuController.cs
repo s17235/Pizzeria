@@ -19,12 +19,25 @@ namespace s17235Pizzeria.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Metoda zwraca dane na temat wszytskich menu
+        /// </summary>
+        /// <returns>
+        /// Lista obiektów reprezentujących menu
+        /// </returns>
         [HttpGet]
         public IActionResult GetMenu()
         {
             return Ok(_context.Menu.ToList());
         }
 
+        /// <summary>
+        /// Metoda zwraca dane na temat danego menu
+        /// </summary>
+        /// <param name="IdMenu">Numer identyfikacyjny menu</param>
+        /// <returns>
+        /// Obiekt reprezentujący menu
+        /// </returns>
         [HttpGet("{IdMenu:int}")]
         public IActionResult GetMenu(int IdMenu)
         {
@@ -35,6 +48,11 @@ namespace s17235Pizzeria.Controllers
             return Ok(menu);
         }
 
+        /// <summary>
+        /// Metoda tworzy obiekt menu
+        /// </summary>
+        /// <param name="menu">Obiekt menu</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Create(Menu menu)
         {
@@ -44,6 +62,12 @@ namespace s17235Pizzeria.Controllers
             return StatusCode(201, menu);
         }
 
+        /// <summary>
+        /// Metoda modyfikuje konkretny obiekt menu
+        /// </summary>
+        /// <param name="IdMenu">Numer identyfikacyjny menu</param>
+        /// <param name="menu">Obiekt menu</param>
+        /// <returns></returns>
         [HttpPut("{IdMenu:int}")]
         public IActionResult Update(int IdMenu, Menu menu)
         {
@@ -58,9 +82,16 @@ namespace s17235Pizzeria.Controllers
             return Ok(menu);
         }
 
+        /// <summary>
+        /// Metoda usuwa konkretny obiekt menu
+        /// </summary>
+        /// <param name="IdMenu">Numer identyfikacyjny menu</param>
+        /// <param name="menu">Obiekt menu</param>
+        /// <returns></returns>
         [HttpDelete("{IdMenu:int}")]
         public IActionResult Delete(int IdMenu, Menu menu)
         {
+
             var istnieje = _context.Menu.FirstOrDefault(e => e.IdMenu == IdMenu);
             if (istnieje == null)
                 return NotFound();

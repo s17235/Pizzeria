@@ -19,12 +19,25 @@ namespace s17235Pizzeria.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Metoda zwraca dane na temat wszytskich promocji
+        /// </summary>
+        /// <returns>
+        /// Lista obiektów reprezentujących promocje
+        /// </returns>
         [HttpGet]
         public IActionResult GetPromocja()
         {
             return Ok(_context.Promocja.ToList());
         }
 
+        /// <summary>
+        /// Metoda zwraca dane na temat konkretnej promocji
+        /// </summary>
+        /// <param name="IdPromocja">Numer identyfikacyjny promocji</param>
+        /// <returns>
+        /// Obiekt reprezentujący promocję
+        /// </returns>
         [HttpGet("{IdPromocja:int}")]
         public IActionResult GetPromocja(int IdPromocja)
         {
@@ -35,6 +48,11 @@ namespace s17235Pizzeria.Controllers
             return Ok(promocja);
         }
 
+        /// <summary>
+        /// Metoda dodaje obiekt promocji
+        /// </summary>
+        /// <param name="promocja">Obiekt promocji</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Create(Promocja promocja)
         {
@@ -44,6 +62,12 @@ namespace s17235Pizzeria.Controllers
             return StatusCode(201, promocja);
         }
 
+        /// <summary>
+        /// Metoda modyfikuje konkretny obiekt promocji
+        /// </summary>
+        /// <param name="IdPromocja">Numer identyfikacyjny promocji</param>
+        /// <param name="promocja">Obiekt promocji</param>
+        /// <returns></returns>
         [HttpPut("{IdPromocja:int}")]
         public IActionResult Update(int IdPromocja, Promocja promocja)
         {
@@ -58,6 +82,12 @@ namespace s17235Pizzeria.Controllers
             return Ok(promocja);
         }
 
+        /// <summary>
+        /// Metoda usuwa konkretny obiekt promocji
+        /// </summary>
+        /// <param name="IdPromocja">Numer identyfikacyjny promocji</param>
+        /// <param name="promocja">Obiekt promocji</param>
+        /// <returns></returns>
         [HttpDelete("{IdPromocja:int}")]
         public IActionResult Delete(int IdPromocja, Promocja promocja)
         {

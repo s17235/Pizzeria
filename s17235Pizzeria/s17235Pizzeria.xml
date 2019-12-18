@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>s17235Pizzeria</name>
+    </assembly>
+    <members>
+        <member name="M:s17235Pizzeria.Controllers.MenuController.GetMenu">
+            <summary>
+            Metoda zwraca dane na temat wszytskich menu
+            </summary>
+            <returns>
+            Lista obiektów reprezentujących menu
+            </returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.MenuController.GetMenu(System.Int32)">
+            <summary>
+            Metoda zwraca dane na temat danego menu
+            </summary>
+            <param name="IdMenu">Numer identyfikacyjny menu</param>
+            <returns>
+            Obiekt reprezentujący menu
+            </returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.MenuController.Create(s17235Pizzeria.Models.Menu)">
+            <summary>
+            Metoda tworzy obiekt menu
+            </summary>
+            <param name="menu">Obiekt menu</param>
+            <returns></returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.MenuController.Update(System.Int32,s17235Pizzeria.Models.Menu)">
+            <summary>
+            Metoda modyfikuje konkretny obiekt menu
+            </summary>
+            <param name="IdMenu">Numer identyfikacyjny menu</param>
+            <param name="menu">Obiekt menu</param>
+            <returns></returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.MenuController.Delete(System.Int32,s17235Pizzeria.Models.Menu)">
+            <summary>
+            Metoda usuwa konkretny obiekt menu
+            </summary>
+            <param name="IdMenu">Numer identyfikacyjny menu</param>
+            <param name="menu">Obiekt menu</param>
+            <returns></returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.PromocjeController.GetPromocja">
+            <summary>
+            Metoda zwraca dane na temat wszytskich promocji
+            </summary>
+            <returns>
+            Lista obiektów reprezentujących promocje
+            </returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.PromocjeController.GetPromocja(System.Int32)">
+            <summary>
+            Metoda zwraca dane na temat konkretnej promocji
+            </summary>
+            <param name="IdPromocja">Numer identyfikacyjny promocji</param>
+            <returns>
+            Obiekt reprezentujący promocję
+            </returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.PromocjeController.Create(s17235Pizzeria.Models.Promocja)">
+            <summary>
+            Metoda dodaje obiekt promocji
+            </summary>
+            <param name="promocja">Obiekt promocji</param>
+            <returns></returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.PromocjeController.Update(System.Int32,s17235Pizzeria.Models.Promocja)">
+            <summary>
+            Metoda modyfikuje konkretny obiekt promocji
+            </summary>
+            <param name="IdPromocja">Numer identyfikacyjny promocji</param>
+            <param name="promocja">Obiekt promocji</param>
+            <returns></returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.PromocjeController.Delete(System.Int32,s17235Pizzeria.Models.Promocja)">
+            <summary>
+            Metoda usuwa konkretny obiekt promocji
+            </summary>
+            <param name="IdPromocja">Numer identyfikacyjny promocji</param>
+            <param name="promocja">Obiekt promocji</param>
+            <returns></returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.ZamowienieController.GetZamowienie">
+            <summary>
+            Metoda zwraca dane na temat wszytskich zamówień
+            </summary>
+            <returns>
+            Lista obiektów reprezentujących zamówienia
+            </returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.ZamowienieController.GetZamowienie(System.Int32)">
+            <summary>
+            Metoda zwraca dane na temat konkretnego zamówienia
+            </summary>
+            <param name="IdZamowienie">Numer identyfikacyjny zamówienia</param>
+            <returns>Obiekt reprezentujący zamówienie</returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.ZamowienieController.Create(s17235Pizzeria.Models.Zamowienie)">
+            <summary>
+            Metoda tworzy obiekt zamówienia
+            </summary>
+            <param name="zamowienie">Obiekt zamowienia</param>
+            <returns></returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.ZamowienieController.Update(System.Int32,s17235Pizzeria.Models.Zamowienie)">
+            <summary>
+            Metoda modyfikuje obiekt zamówienia
+            </summary>
+            <param name="IdZamowienie">Numer identyfikacyjny zamówienia</param>
+            <param name="zamowienie">Obiekt zamowienia</param>
+            <returns></returns>
+        </member>
+        <member name="M:s17235Pizzeria.Controllers.ZamowienieController.Delete(System.Int32,s17235Pizzeria.Models.Zamowienie)">
+            <summary>
+            Metoda usuwa obiekt zamówienia
+            </summary>
+            <param name="IdZamowienie">Numer identyfikacyjny zamówienia</param>
+            <param name="zamowienie">Obiekt zamowienia</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -19,12 +19,23 @@ namespace s17235Pizzeria.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Metoda zwraca dane na temat wszytskich zamówień
+        /// </summary>
+        /// <returns>
+        /// Lista obiektów reprezentujących zamówienia
+        /// </returns>
         [HttpGet]
         public IActionResult GetZamowienie()
         {
             return Ok(_context.Zamowienie.ToList());
         }
 
+        /// <summary>
+        /// Metoda zwraca dane na temat konkretnego zamówienia
+        /// </summary>
+        /// <param name="IdZamowienie">Numer identyfikacyjny zamówienia</param>
+        /// <returns>Obiekt reprezentujący zamówienie</returns>
         [HttpGet("{IdZamowienie:int}")]
         public IActionResult GetZamowienie(int IdZamowienie)
         {
@@ -35,6 +46,11 @@ namespace s17235Pizzeria.Controllers
             return Ok(zamowienie);
         }
 
+        /// <summary>
+        /// Metoda tworzy obiekt zamówienia
+        /// </summary>
+        /// <param name="zamowienie">Obiekt zamowienia</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Create(Zamowienie zamowienie)
         {
@@ -44,6 +60,12 @@ namespace s17235Pizzeria.Controllers
             return StatusCode(201, zamowienie);
         }
 
+        /// <summary>
+        /// Metoda modyfikuje obiekt zamówienia
+        /// </summary>
+        /// <param name="IdZamowienie">Numer identyfikacyjny zamówienia</param>
+        /// <param name="zamowienie">Obiekt zamowienia</param>
+        /// <returns></returns>
         [HttpPut("{IdZamowienie:int}")]
         public IActionResult Update(int IdZamowienie, Zamowienie zamowienie)
         {
@@ -58,6 +80,12 @@ namespace s17235Pizzeria.Controllers
             return Ok(zamowienie);
         }
 
+        /// <summary>
+        /// Metoda usuwa obiekt zamówienia
+        /// </summary>
+        /// <param name="IdZamowienie">Numer identyfikacyjny zamówienia</param>
+        /// <param name="zamowienie">Obiekt zamowienia</param>
+        /// <returns></returns>
         [HttpDelete("{IdZamowienie:int}")]
         public IActionResult Delete(int IdZamowienie, Zamowienie zamowienie)
         {
